@@ -1,28 +1,113 @@
 export type ThemeName = "light" | "dark";
-type ColorKey = "primary" | "secondary" | "background" | "third";
+export type HeadingSize = "large" | "medium" | "small";
+export type ButtonSize = "large" | "medium" | "small";
+export type ColorKey =
+  | "primary"
+  | "secondary"
+  | "background"
+  | "third"
+  | "border"
+  | "text";
+export type ButtonScheme = "primary" | "normal";
+export type LayoutWidth = "large" | "medium" | "small";
 
 interface Theme {
   name: ThemeName;
   color: Record<ColorKey, string>;
+  heading: {
+    [key in HeadingSize]: {
+      fontSize: string;
+    };
+  };
+  button: {
+    [key in ButtonSize]: {
+      fontSize: string;
+      padding: string;
+    };
+  };
+  buttonScheme: {
+    [key in ButtonScheme]: {
+      color: string;
+      backgroungcolor: string;
+    };
+  };
+  borderRadius: {
+    default: string;
+  };
+  layout: {
+    width: {
+      [key in LayoutWidth]: string;
+    };
+  };
 }
 
 export const light: Theme = {
   name: "light",
   color: {
-    primary: "brown",
-    background: "lightgray",
-    secondary: "blue",
+    primary: "#ff5800",
+    background: "lightgrey",
+    secondary: "#5F5F5F",
     third: "green",
+    border: "gray",
+    text: "black",
+  },
+  heading: {
+    large: {
+      fontSize: "2rem",
+    },
+    medium: {
+      fontSize: "1.5rem",
+    },
+    small: {
+      fontSize: "1rem",
+    },
+  },
+  button: {
+    large: {
+      fontSize: "2rem",
+      padding: "1rem 2rem",
+    },
+    medium: {
+      fontSize: "1.5rem",
+      padding: "0.5rem 1rem",
+    },
+    small: {
+      fontSize: "0.75rem",
+      padding: "0.25rem 0.5rem",
+    },
+  },
+  buttonScheme: {
+    primary: {
+      color: "white",
+      backgroungcolor: "midnightblue",
+    },
+    normal: {
+      color: "black",
+      backgroungcolor: "lightgray",
+    },
+  },
+  borderRadius: {
+    default: "4px",
+  },
+  layout: {
+    width: {
+      large: "1020px",
+      medium: "760px",
+      small: "320px",
+    },
   },
 };
 
 export const dark: Theme = {
+  ...light,
   name: "dark",
   color: {
     primary: "coral",
     background: "midnightblue",
     secondary: "darkblue",
     third: "darkgreen",
+    border: "gray",
+    text: "black",
   },
 };
 
