@@ -8,7 +8,7 @@ export type ColorKey =
   | "third"
   | "border"
   | "text";
-export type ButtonScheme = "primary" | "normal";
+export type ButtonScheme = "primary" | "normal" | "like";
 export type LayoutWidth = "large" | "medium" | "small";
 
 interface Theme {
@@ -68,7 +68,7 @@ export const light: Theme = {
       padding: "1rem 2rem",
     },
     medium: {
-      fontSize: "1.5rem",
+      fontSize: "1rem",
       padding: "0.5rem 1rem",
     },
     small: {
@@ -84,6 +84,10 @@ export const light: Theme = {
     normal: {
       color: "black",
       backgroungColor: "lightgray",
+    },
+    like: {
+      color: "white",
+      backgroungColor: "coral",
     },
   },
   borderRadius: {

@@ -19,7 +19,6 @@ function BooksList({ books }: Props) {
 
     if (params.get(QUERYSTRING.VIEW)) {
       setView(params.get(QUERYSTRING.VIEW) as ViewMode);
-      console.log(view);
     }
   }, [location.search, view]);
   return (

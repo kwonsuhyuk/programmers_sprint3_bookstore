@@ -12,7 +12,7 @@ const dummyBook: Book = {
   author: "author",
   price: 10000,
   likes: 10,
-  pubDate: "2021-01-01",
+  pub_date: "2021-01-01",
   contents: "contents",
   pages: 100,
   isbn: "isbn",
