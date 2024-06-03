@@ -28,7 +28,7 @@ interface Theme {
   buttonScheme: {
     [key in ButtonScheme]: {
       color: string;
-      backgroungcolor: string;
+      backgroungColor: string;
     };
   };
   borderRadius: {
@@ -79,11 +79,11 @@ export const light: Theme = {
   buttonScheme: {
     primary: {
       color: "white",
-      backgroungcolor: "midnightblue",
+      backgroungColor: "midnightblue",
     },
     normal: {
       color: "black",
-      backgroungcolor: "lightgray",
+      backgroungColor: "lightgray",
     },
   },
   borderRadius: {
