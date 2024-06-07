@@ -16,6 +16,7 @@ function Button({
   disabled,
   isLoading,
   onClick,
+  type = "button",
 }: Props) {
   return (
     <ButtonStyle
@@ -23,7 +24,8 @@ function Button({
       size={size}
       scheme={scheme}
       disabled={disabled}
-      isLoading={isLoading}>
+      isLoading={isLoading}
+      type={type}>
       {children}
     </ButtonStyle>
   );
