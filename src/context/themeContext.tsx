@@ -10,7 +10,7 @@ interface State {
   toggleTheme: () => void;
 }
 
-export const state = {
+export const state: State = {
   themeName: "light" as ThemeName,
   toggleTheme: () => {},
 };

@@ -44,7 +44,7 @@ function CartItem({ cart, checkedItems, onCheck, onDelete }: Props) {
           <p className="quantity">{cart.quantity} 권</p>
         </div>
       </div>
-      <Button size="medium" scheme="normal" onClick={handleDelete}>
+      <Button scheme="normal" size="medium" onClick={handleDelete}>
         장바구니 삭제
       </Button>
     </CartItemStyle>

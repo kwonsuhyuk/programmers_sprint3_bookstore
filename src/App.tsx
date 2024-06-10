@@ -13,6 +13,7 @@ import Order from "./pages/Order";
 import OrderList from "./pages/OrderList";
 import { QueryClientProvider } from "react-query";
 import { queryClient } from "./api/queryClient";
+import Detail from "./pages/Detail";
 
 const routeList = [
   {
@@ -51,6 +52,10 @@ const routeList = [
   {
     path: "/orderlist",
     element: <OrderList />,
+  },
+  {
+    path: "/detail",
+    element: <Detail />,
   },
 ];
 

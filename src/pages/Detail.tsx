@@ -1,5 +1,5 @@
 function Detail() {
-  return <div>디테일</div>;
+  return <div>hihi</div>;
 }
 
 export default Detail;

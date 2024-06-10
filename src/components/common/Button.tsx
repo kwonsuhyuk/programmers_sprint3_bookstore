@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { ButtonScheme, ButtonSize } from "../../style/theme";
 import React from "react";
+
 interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
   size: ButtonSize;
