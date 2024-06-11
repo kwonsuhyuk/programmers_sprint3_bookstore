@@ -123,7 +123,7 @@ function Order() {
             size="large"
             scheme="primary"
             onClick={handleSubmit(handlePay)}>
-            결재하기
+            결제하기
           </Button>
         </div>
       </CartStyle>

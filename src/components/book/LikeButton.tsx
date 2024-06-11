@@ -26,9 +26,9 @@ const LikeButtonStyle = styled(Button)`
   gap: 6px;
 
   svg {
-    color: inherit;
+    fill: white;
     * {
-      color: inherit;
+      fill: white;
     }
   }
 `;
