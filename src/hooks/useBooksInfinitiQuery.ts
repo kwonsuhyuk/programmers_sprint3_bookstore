@@ -42,6 +42,7 @@ export const useBooksInfinite = () => {
       },
     }
   );
+  console.log(data);
 
   const books = data ? data.pages.flatMap((page) => page.books) : [];
   const pagination = data ? data.pages[data.pages.length - 1].pagination : {};

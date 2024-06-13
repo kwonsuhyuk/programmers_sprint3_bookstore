@@ -24,7 +24,7 @@ export const useIntersectionObserver = (
         observer.unobserve(targetRef.current);
       }
     };
-  });
+  }, [callback, options]);
 
   return targetRef;
 };

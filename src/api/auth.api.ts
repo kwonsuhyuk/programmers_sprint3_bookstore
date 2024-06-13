@@ -22,5 +22,6 @@ interface LoginResponse {
 
 export const login = async (data: SignupProps) => {
   const response = await httpClient.post<LoginResponse>("/users/login", data);
+
   return response.data;
 };

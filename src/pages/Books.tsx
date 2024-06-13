@@ -22,31 +22,11 @@ function Books() {
     hasNextPage,
   } = useBooksInfinite();
 
-  // useEffect(() => {
-  //   const observer = new IntersectionObserver((entries) => {
-  //     entries.forEach((entry) => {
-  //       if (entry.isIntersecting) {
-  //         loadMore();
-  //         observer.unobserve(entry.target);
-  //       }
-  //     });
-  //   });
-
-  //   if (moreRef.current) {
-  //     observer.observe(moreRef.current);
-  //   }
-
-  //   return () => observer.disconnect();
-  // }, [books, moreRef, fetchNextPage]);
-
-  const moreRef = useIntersectionObserver(
-    ([entry]) => {
-      if (entry.isIntersecting) {
-        loadMore();
-      }
-    },
-    { threshold: 1 }
-  );
+  const moreRef = useIntersectionObserver(([entry]) => {
+    if (entry.isIntersecting) {
+      loadMore();
+    }
+  });
 
   const loadMore = () => {
     if (!hasNextPage) return;
@@ -71,15 +51,7 @@ function Books() {
         </div>
         <BooksList books={books} />
         {/* <Pagination pagination={pagination} /> */}
-        <div className="more" ref={moreRef}>
-          <Button
-            size="medium"
-            scheme="normal"
-            onClick={() => fetchNextPage()}
-            disabled={!hasNextPage}>
-            {hasNextPage ? "더보기" : "마지막페이지"}
-          </Button>
-        </div>
+        <div className="more" ref={moreRef}></div>
       </BooksStyle>
     </>
   );

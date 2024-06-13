@@ -24,7 +24,6 @@ export const useAuthStore = create<StoreState>((set) => ({
   storeLogin: (token: string) => {
     set({ isloggedIn: true });
     setToken(token);
-    console.log(token);
   },
   storeLogout: () => {
     set({ isloggedIn: false });

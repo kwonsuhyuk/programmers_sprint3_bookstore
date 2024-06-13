@@ -2,24 +2,6 @@ import { BookReviewItem } from "@/models/book.model";
 import { HttpResponse, http } from "msw";
 import { fakerKO as faker } from "@faker-js/faker";
 
-// const mockReviewData: BookReviewItem[] = [
-//   {
-//     id: 1,
-//     userName: "Bob",
-//     content: "감사합니다.",
-//     createdAt: "2021-01-01",
-//     score: 5,
-//   },
-
-//   {
-//     id: 2,
-//     userName: "Bob22",
-//     content: "감사합니다222.",
-//     createdAt: "2021-01-01",
-//     score: 3,
-//   },
-// ];
-
 const mockReviewData: BookReviewItem[] = Array.from({ length: 8 }).map(
   (_, index) => ({
     id: index,
@@ -50,3 +32,9 @@ export const addReview = http.post(
     );
   }
 );
+
+export const reviewForMain = http.get("http://localhost:9999/reviews", () => {
+  return HttpResponse.json(mockReviewData, {
+    status: 200,
+  });
+});
